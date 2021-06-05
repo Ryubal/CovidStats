@@ -1,0 +1,31 @@
+{
+  "name": "covidstats",
+  "version": "1.0.0",
+  "description": "Discord bot that provides with up-to-date COVID statistics around the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryubal/CovidStats.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "covid",
+    "stats",
+    "nodejs",
+    "node"
+  ],
+  "author": "Ricardo Yubal Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryubal/CovidStats/issues"
+  },
+  "homepage": "https://github.com/Ryubal/CovidStats#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.3"
+  }
+}

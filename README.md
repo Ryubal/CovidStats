@@ -34,6 +34,7 @@ This bot is in its early stages. Right now it's stable, but very simple. Below a
 - More useful COVID-related commands. Stats, graphs, health information, etc.
 - Translation, at least to spanish for now.
 - Ability to configure bot with commands (default language, default country, stats every N minutes)
+- !help command
 
 ## Contributing
 Contributions are very welcome! Here's how:

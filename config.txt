@@ -4,5 +4,5 @@
 	"token": "YOUR_DISCORD_TOKEN_GOES_HERE",
 
 	"version": "1.0.0",
-	"langs": ["en", "es"],
+	"langs": ["en", "es"]
 }

@@ -3,6 +3,7 @@ const {allowed_countries} = require('../../common/api')
 const {prefix} = require('../../config.json')
 const {MessageEmbed} = require('discord.js')
 const api = require('../../common/api')
+const i18n = require('i18n')
 
 // Utility to capitalize string
 const capitalize = s => {
@@ -30,14 +31,16 @@ const nullToHypen = str => {
 }
 
 module.exports = {
-	name: 'covid',
-	description: 'Gets COVID stats worldwide, or from a single country',
+	name: i18n.__('c.covid.name'),
+	description: i18n.__('c.covid.description'),
 	async execute(message, args) {
 		// Check if we have arguments
 		if(!args.length) {
-			let reply = `You didn't provide any arguments, ${message.author}`
-				+ '\n'
-				+ `You can send \`${prefix}${this.name} all\` to get worldwide stats, or \`${prefix}${this.name} countries\` to get a list of allowed countries.`
+			let reply = i18n.__mf('c.covid.error_no_args', {
+				author: message.author,
+				command_all: `${prefix}${this.name} ${i18n.__('c.covid.args.all')}`,
+				command_countries: `${prefix}${this.name} ${i18n.__('c.covid.args.countries')}`
+			})
 
 			return message.channel.send(reply)
 		}
@@ -46,41 +49,42 @@ module.exports = {
 		const fullArgs = args.join(' ').toLowerCase()
 
 		// Is the user asking for allowed countries?
-		if(fullArgs == 'countries') {
-			let reply = `To use this command, send \`${prefix}${this.name} [COUNTRY]\`, where \`[COUNTRY]\` can be one of:`
-				+ '`'
-				+ '\n\n'
-				+ allowed_countries.join('`, `')
-				+ '`'
+		if(fullArgs == i18n.__('c.covid.args.countries')) {
+			let reply = i18n.__mf('c.covid.all_countries', {
+				command: `${prefix}${this.name}`,
+				allowed_countries: allowed_countries.join('`, `')
+			})
 
 			return message.channel.send(reply)
 		}
 
-		// Is the user asking for all stats?
-		if(fullArgs == 'all') {
-			return message.channel.send('Sorry! At this moment I can\'t process this query')
+		// Is the user asking for all stats? (Disabled for now)
+		if(fullArgs == i18n.__('c.covid.args.all')) {
+			return message.channel.send(i18n.__('c.covid.error_all_stats'))
 		}
 
 		// At this point, all we can have in fullArgs is a country.. Let's make sure it exists
 		// But first, we'll convert allowed_countries to lowercase
 		const allowed_countries_lc = allowed_countries.map(str => str.toLowerCase())
 		if(!allowed_countries_lc.includes(fullArgs)) {
-			let reply = `**${fullArgs}** is not a valid country, ${message.author}`
-				+ '\n\n'
-				+ `If you'd like to get a list of allowed countries, type \`${prefix}${this.name} countries\``
+			let reply = i18n.__mf('c.covid.error_invalid_country', {
+				country: fullArgs,
+				author: message.author,
+				command_countries: `${prefix}${this.name} ${i18n.__('c.covid.args.countries')}`
+			})
 
-				return message.channel.send(reply)
+			return message.channel.send(reply)
 		}
 
 		// At this point we have a country and it exists.. Query time!
-		const reply = await message.channel.send(simpleEmbed("Please wait! I'm getting the info for you 🙂"))
+		const reply = await message.channel.send(simpleEmbed(i18n.__('c.covid.loading')))
 
 		try {
 			const response = await axios.get(api.url)
 			
 			// If we didn't get any info
 			if(!response.data.length)
-				return await reply.edit(simpleEmbed("Sorry! I couldn't get the information right now 🙁"))
+				return await reply.edit(simpleEmbed(i18n.__('c.covid.error_no_info')))
 
 			// Search for the country we're looking for
 			var countryData
@@ -93,30 +97,30 @@ module.exports = {
 
 			// Country not found?
 			if(!countryData)
-				return await reply.edit(simpleEmbed("Sorry! I couldn't find this country 🙁"))
+				return await reply.edit(simpleEmbed(i18n.__('c.covid.error_no_country')))
 			
 			// Country found, let's build the embed!
 			const embed = new MessageEmbed()
 				.setColor('#FF0000')
 				.setTitle(capitalize(fullArgs))
 				.addFields(
-					{ name: 'Infected', value: nullToHypen(countryData.infected), inline: true },
+					{ name: i18n.__('c.covid.infected'), value: nullToHypen(countryData.infected), inline: true },
 					{ name: '\u200b', value: '\u200b', inline: true},
-					{ name: 'Tested', value: nullToHypen(countryData.tested), inline: true }
+					{ name: i18n.__('c.covid.tested'), value: nullToHypen(countryData.tested), inline: true }
 				)
 				.addFields(
-					{ name: 'Recovered', value: nullToHypen(countryData.recovered), inline: true },
+					{ name: i18n.__('c.covid.recovered'), value: nullToHypen(countryData.recovered), inline: true },
 					{ name: '\u200b', value: '\u200b', inline: true},
-					{ name: 'Deceased', value: nullToHypen(countryData.deceased), inline: true }
+					{ name: i18n.__('c.covid.deceased'), value: nullToHypen(countryData.deceased), inline: true }
 				)
-				.addField('Last update', new Date(countryData.lastUpdatedApify).toLocaleString())
-				.addField('\u200b', 'Information obtained from [Apify](https://apify.com/covid19)')
+				.addField(i18n.__('c.covid.last_update'), new Date(countryData.lastUpdatedApify).toLocaleString())
+				.addField('\u200b', i18n.__mf('c.covid.information_obtained', {url: 'https://apify.com/covid19'}))
 
 			return await reply.edit(embed)
 			
 		}catch(error) {
 			console.log(error)
-			return await reply.edit(simpleEmbed("Sorry! I couldn't get the information right now 🙁"))
+			return await reply.edit(simpleEmbed(i18n.__('c.covid.error_no_info')))
 		}
 
 	}

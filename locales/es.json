@@ -1,3 +1,16 @@
 {
-	"ready": "Listo!"
+	"e": {
+		"ready": "Ready!",
+		"message": {
+			"error_command": "Sorry! I couldn't execute this command 🙁"
+		}
+	},
+	"c": {
+		"covid": {
+			"name": "covid",
+			"description": "Gets COVID stats worldwide, or from a single country",
+			"error_no_args": "You didn't provide any arguments, {{author}}\nYou can send `{{command}} all` to get worldwide stats, or `{{command}} countries` to get a list of allowed countries.",
+			"all_countries": "To use this command, send `{{command}} [COUNTRY]`, where `[COUNTRY]` can be one of: \n\n`{{allowed_countries}}`"
+		}
+	}
 }

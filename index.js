@@ -12,7 +12,8 @@ client.commands = new Discord.Collection()
 i18n.configure({
 	locales: langs,
 	directory: path.join(__dirname, 'locales'),
-	defaultLocale: defaultLang
+	defaultLocale: defaultLang,
+	objectNotation: true
 })
 
 // Load commands from ./commands

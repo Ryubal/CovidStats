@@ -1,10 +1,10 @@
-const {version} = require('../../config.json')
+const i18n = require('i18n')
 
 module.exports = {
-	name: 'author',
-	description: 'Gets bot creator',
+	name: i18n.__('c.author.name'),
+	description: i18n.__('c.author.description'),
 	execute(message, args) {
-		message.channel.send(`Ricardo Yubal is my creator!`)
+		message.channel.send(i18n.__('c.author.author_msg'))
 		message.channel.send('http://github.com/ryubal')
 	}
 }

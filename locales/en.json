@@ -1,3 +1,46 @@
 {
-	"ready": "Ready!"
+	"e": {
+		"ready": "Ready!",
+		"message": {
+			"error_command": "Sorry! I couldn't execute this command 🙁"
+		}
+	},
+	"c": {
+		"covid": {
+			"name": "covid",
+			"description": "Gets COVID stats worldwide, or from a single country",
+			"args": {
+				"all": "all",
+				"countries": "countries"
+			},
+			"error_no_args": "You didn't provide any arguments, <@{author}>\nYou can send `{command_all}` to get worldwide stats, or `{command_countries}` to get a list of allowed countries.",
+			"all_countries": "To use this command, send `{command} [COUNTRY]`, where `[COUNTRY]` can be one of: \n\n`{allowed_countries}`",
+			"error_all_stats": "Sorry! At this moment I can't process this query",
+			"error_invalid_country": "**{country}** is not a valid country, <@{author}>\n\nIf you'd like to get a list of allowed countries, type `{command_countries}`",
+			"loading": "Please wait! I'm getting the info for you 🙂",
+			"error_no_info": "Sorry! I couldn't get the information right now 🙁",
+			"error_no_country": "Sorry! I couldn't find this country 🙁",
+			"infected": "Infected",
+			"tested": "Tested",
+			"recovered": "Recovered",
+			"deceased": "Deceased",
+			"last_update": "Last update",
+			"information_obtained": "Information obtained from [Apify]({url})"
+		},
+		"version": {
+			"name": "version",
+			"description": "Gets current bot version",
+			"version_msg": "🤖 My current version is {version}"
+		},
+		"author": {
+			"name": "author",
+			"description": "Gets bot creator",
+			"author_msg": "Ricardo Yubal is my creator!"
+		},
+		"ping": {
+			"name": "ping",
+			"description": "Pings bot",
+			"ping_msg": "Pong!"
+		}
+	}
 }

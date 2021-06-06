@@ -1,10 +1,19 @@
 const Discord = require('discord.js')
-const {token} = require('./config.json')
+const {token, langs, defaultLang} = require('./config.json')
 const fs = require('fs')
+const path = require('path')
+const i18n = require('i18n')
 
 // Start Discord client, and define commands collection
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
+
+// Configure i18n
+i18n.configure({
+	locales: langs,
+	directory: path.join(__dirname, 'locales'),
+	defaultLocale: defaultLang
+})
 
 // Load commands from ./commands
 const commandFolders = fs.readdirSync('./commands')

@@ -3,6 +3,5 @@
 	"defaultLang": "en",
 	"token": "YOUR_DISCORD_TOKEN_GOES_HERE",
 
-	"version": "1.0.1",
-	"langs": ["en", "es"]
+	"version": "1.0.1"
 }

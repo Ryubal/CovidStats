@@ -26,6 +26,7 @@
   "homepage": "https://github.com/Ryubal/CovidStats#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "discord.js": "^12.5.3"
+    "discord.js": "^12.5.3",
+    "i18n": "^0.13.3"
   }
 }

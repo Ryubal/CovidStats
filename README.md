@@ -26,13 +26,34 @@ The main idea of this bot is to get basic COVID statistics pretty quickly, about
 `!covid [COUNTRY]`
 > Returns COVID statistics about **country**. Example: `!covid united states`
 
+`!help [COMMAND]`
+> If no **command** provided, will return a list of available commands
+
+> If **command** is provided, will return information about that specific command
+
+`!version`
+> Will return current bot version
+
+`!ping`
+> Will ping the bot
+
+`!author`
+> Will return author information (link to this repo)
+
+## Configuring
+All settings can be changed by editing the `config.json` file. As of now, only 4 settings can be changed:
+- `prefix` - This must be present before a command, in order to be recognized by the bot.
+- `token` - Discord bot token
+- `defaultLang` - Default language for the bot. Options available: `en`, `es`
+- `langs` - Array with languages installed. Files can be located on `./locales`
+
 ## Details
-This project was created using NodeJS (with the Discord.js library). COVID information is gathered from [Apify](https://apify.com/covid-19)
+This project was created using NodeJS (with the Discord.js library). COVID information is gathered from [Apify](https://apify.com/covid-19) using axios. Translation was integrated with i18n-node.
 
 ## Future plans
 This bot is in its early stages. Right now it's stable, but very simple. Below are some of the features that I'd like to add in the very next weeks:
 - More useful COVID-related commands. Stats, graphs, health information, etc.
-- Translation, at least to spanish for now.
+- Translation. Right now spanish is available, but more languages would be great.
 - Ability to configure bot with commands (default language, default country, stats every N minutes)
 
 ## Contributing

@@ -1,3 +1,4 @@
+const i18n = require('i18n')
 const {prefix} = require('../config.json')
 
 module.exports = {
@@ -21,7 +22,7 @@ module.exports = {
 			command.execute(message, args)
 		}catch(error) {
 			console.log(error)
-			message.reply("Sorry! I couldn't execute this command 🙁")
+			message.reply(i18n.__('e.message.error_command'))
 		}
 	}
 }

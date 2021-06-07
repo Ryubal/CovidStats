@@ -9,8 +9,55 @@
 		"covid": {
 			"name": "covid",
 			"description": "Gets COVID stats worldwide, or from a single country",
-			"error_no_args": "You didn't provide any arguments, {{author}}\nYou can send `{{command}} all` to get worldwide stats, or `{{command}} countries` to get a list of allowed countries.",
-			"all_countries": "To use this command, send `{{command}} [COUNTRY]`, where `[COUNTRY]` can be one of: \n\n`{{allowed_countries}}`"
+			"usage": "covid [PARAM]",
+			"help_msg": "Available params:\n`all` To get worldwide statistics\n`countries` To get list of available countries\n`[COUNTRY]` To get stats about a specific country. Example: `{prefix}covid united states`",
+			"args": {
+				"all": "all",
+				"countries": "countries"
+			},
+			"error_no_args": "You didn't provide any arguments, <@{author}>\nYou can send `{command_all}` to get worldwide stats, or `{command_countries}` to get a list of allowed countries.",
+			"all_countries": "To use this command, send `{command} [COUNTRY]`, where `[COUNTRY]` can be one of: \n\n`{allowed_countries}`",
+			"error_all_stats": "Sorry! At this moment I can't process this query",
+			"error_invalid_country": "**{country}** is not a valid country, <@{author}>\n\nIf you'd like to get a list of allowed countries, type `{command_countries}`",
+			"loading": "Please wait! I'm getting the info for you 🙂",
+			"error_no_info": "Sorry! I couldn't get the information right now 🙁",
+			"error_no_country": "Sorry! I couldn't find this country 🙁",
+			"infected": "Infected",
+			"tested": "Tested",
+			"recovered": "Recovered",
+			"deceased": "Deceased",
+			"last_update": "Last update",
+			"information_obtained": "Information obtained from [Apify]({url})"
+		},
+		"version": {
+			"name": "version",
+			"description": "Gets current bot version",
+			"usage": "version",
+			"help_msg": "-",
+			"version_msg": "🤖 My current version is {version}"
+		},
+		"author": {
+			"name": "author",
+			"description": "Gets bot creator",
+			"usage": "author",
+			"help_msg": "-",
+			"author_msg": "Ricardo Yubal is my creator!"
+		},
+		"ping": {
+			"name": "ping",
+			"description": "Pings bot",
+			"usage": "ping",
+			"help_msg": "-",
+			"ping_msg": "Pong!"
+		},
+		"help": {
+			"name": "help",
+			"description": "Returns all commands available",
+			"label_description": "Description",
+			"label_usage": "Usage",
+			"help": "Help",
+			"specific_help_msg": "To see help about a specific command, send `{prefix}help COMMAND`, example: `{prefix}help covid`",
+			"error_missing_command": "The `{command}` doesn't exist"
 		}
 	}
 }

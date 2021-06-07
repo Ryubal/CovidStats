@@ -33,6 +33,8 @@ const nullToHypen = str => {
 module.exports = {
 	name: i18n.__('c.covid.name'),
 	description: i18n.__('c.covid.description'),
+	usage: i18n.__('c.covid.usage'),
+	showInHelp: true,
 	async execute(message, args) {
 		// Check if we have arguments
 		if(!args.length) {

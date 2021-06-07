@@ -9,6 +9,8 @@
 		"covid": {
 			"name": "covid",
 			"description": "Gets COVID stats worldwide, or from a single country",
+			"usage": "covid [PARAM]",
+			"help_msg": "Available params:\n`all` To get worldwide statistics\n`countries` To get list of available countries\n`[COUNTRY]` To get stats about a specific country. Example: `{prefix}covid united states`",
 			"args": {
 				"all": "all",
 				"countries": "countries"
@@ -30,17 +32,32 @@
 		"version": {
 			"name": "version",
 			"description": "Gets current bot version",
+			"usage": "version",
+			"help_msg": "-",
 			"version_msg": "🤖 My current version is {version}"
 		},
 		"author": {
 			"name": "author",
 			"description": "Gets bot creator",
+			"usage": "author",
+			"help_msg": "-",
 			"author_msg": "Ricardo Yubal is my creator!"
 		},
 		"ping": {
 			"name": "ping",
 			"description": "Pings bot",
+			"usage": "ping",
+			"help_msg": "-",
 			"ping_msg": "Pong!"
+		},
+		"help": {
+			"name": "help",
+			"description": "Returns all commands available",
+			"label_description": "Description",
+			"label_usage": "Usage",
+			"help": "Help",
+			"specific_help_msg": "To see help about a specific command, send `{prefix}help COMMAND`, example: `{prefix}help covid`",
+			"error_missing_command": "The `{command}` command doesn't exist"
 		}
 	}
 }

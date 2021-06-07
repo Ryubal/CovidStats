@@ -5,6 +5,7 @@
 			"error_command": "Sorry! I couldn't execute this command 🙁"
 		}
 	},
+
 	"c": {
 		"covid": {
 			"name": "covid",
@@ -29,6 +30,7 @@
 			"last_update": "Last update",
 			"information_obtained": "Information obtained from [Apify]({url})"
 		},
+
 		"version": {
 			"name": "version",
 			"description": "Gets current bot version",
@@ -36,6 +38,7 @@
 			"help_msg": "-",
 			"version_msg": "🤖 My current version is {version}"
 		},
+
 		"author": {
 			"name": "author",
 			"description": "Gets bot creator",
@@ -43,6 +46,7 @@
 			"help_msg": "-",
 			"author_msg": "Ricardo Yubal is my creator!"
 		},
+		
 		"ping": {
 			"name": "ping",
 			"description": "Pings bot",
@@ -50,6 +54,7 @@
 			"help_msg": "-",
 			"ping_msg": "Pong!"
 		},
+		
 		"help": {
 			"name": "help",
 			"description": "Returns all commands available",

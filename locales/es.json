@@ -1,63 +1,68 @@
 {
 	"e": {
-		"ready": "Ready!",
+		"ready": "Listo!",
 		"message": {
-			"error_command": "Sorry! I couldn't execute this command 🙁"
+			"error_command": "Disculpa! No pude ejecutar este comando 🙁"
 		}
 	},
+
 	"c": {
 		"covid": {
 			"name": "covid",
-			"description": "Gets COVID stats worldwide, or from a single country",
+			"description": "Muestra estadísticas COVID a nivel mundial, o de un país específico",
 			"usage": "covid [PARAM]",
-			"help_msg": "Available params:\n`all` To get worldwide statistics\n`countries` To get list of available countries\n`[COUNTRY]` To get stats about a specific country. Example: `{prefix}covid united states`",
+			"help_msg": "Parámetros disponibles:\n`todos` Para obtener estadísticas a nivel mundial\n`paises` Para obtener listado de países disponibles\n`[PAIS]` Para obtener estadísticas de un país en específico. Ejemplo: `{prefix}covid united states`",
 			"args": {
-				"all": "all",
-				"countries": "countries"
+				"all": "todos",
+				"countries": "paises"
 			},
-			"error_no_args": "You didn't provide any arguments, <@{author}>\nYou can send `{command_all}` to get worldwide stats, or `{command_countries}` to get a list of allowed countries.",
-			"all_countries": "To use this command, send `{command} [COUNTRY]`, where `[COUNTRY]` can be one of: \n\n`{allowed_countries}`",
-			"error_all_stats": "Sorry! At this moment I can't process this query",
-			"error_invalid_country": "**{country}** is not a valid country, <@{author}>\n\nIf you'd like to get a list of allowed countries, type `{command_countries}`",
-			"loading": "Please wait! I'm getting the info for you 🙂",
-			"error_no_info": "Sorry! I couldn't get the information right now 🙁",
-			"error_no_country": "Sorry! I couldn't find this country 🙁",
-			"infected": "Infected",
-			"tested": "Tested",
-			"recovered": "Recovered",
-			"deceased": "Deceased",
-			"last_update": "Last update",
-			"information_obtained": "Information obtained from [Apify]({url})"
+			"error_no_args": "No proporcionaste ningún argumento, <@{author}>\nPuedes enviar `{command_all}` para obtener estadísticas a nivel mundial, o `{command_countries}` para obtener una lista de países disponibles.",
+			"all_countries": "Para usar este comando, envíe `{command} [PAIS]`, donde `[PAIS]` puede ser uno de los siguientes: \n\n`{allowed_countries}`",
+			"error_all_stats": "Disculpa! No puedo procesar esa petición en este momento",
+			"error_invalid_country": "**{country}** no es un país válido, <@{author}>\n\nSi quisiera obtener una lista de países permitidos, ingrese `{command_countries}`",
+			"loading": "Por favor espere! Estoy obteniendo la información 🙂",
+			"error_no_info": "Perdón! No pude obtener la información en este momento 🙁",
+			"error_no_country": "Perdón! No pude encontrar este país 🙁",
+			"infected": "Infectados",
+			"tested": "Pruebas realizadas",
+			"recovered": "Recuperados",
+			"deceased": "Defunciones",
+			"last_update": "Última actualización",
+			"information_obtained": "Información obtenida de [Apify]({url})"
 		},
+
 		"version": {
 			"name": "version",
-			"description": "Gets current bot version",
+			"description": "Para obtener la versión actual del bot",
 			"usage": "version",
 			"help_msg": "-",
-			"version_msg": "🤖 My current version is {version}"
+			"version_msg": "🤖 Mi versión actual es {version}"
 		},
+
 		"author": {
-			"name": "author",
-			"description": "Gets bot creator",
-			"usage": "author",
+			"name": "autor",
+			"description": "Para obtener el autor del bot",
+			"usage": "autor",
 			"help_msg": "-",
-			"author_msg": "Ricardo Yubal is my creator!"
+			"author_msg": "Mi creador es Ricardo Yubal!"
 		},
+
 		"ping": {
 			"name": "ping",
-			"description": "Pings bot",
+			"description": "Para pingear bot",
 			"usage": "ping",
 			"help_msg": "-",
 			"ping_msg": "Pong!"
 		},
+		
 		"help": {
-			"name": "help",
-			"description": "Returns all commands available",
-			"label_description": "Description",
-			"label_usage": "Usage",
-			"help": "Help",
-			"specific_help_msg": "To see help about a specific command, send `{prefix}help COMMAND`, example: `{prefix}help covid`",
-			"error_missing_command": "The `{command}` doesn't exist"
+			"name": "ayuda",
+			"description": "Regresa todos los comandos disponibles",
+			"label_description": "Descripción",
+			"label_usage": "Uso",
+			"help": "Ayuda",
+			"specific_help_msg": "Para ver ayuda acerca de un comando en específico, envíe `{prefix}ayuda COMANDO`, ejemplo: `{prefix}ayuda covid`",
+			"error_missing_command": "El comando `{command}` no existe"
 		}
 	}
 }

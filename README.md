@@ -48,11 +48,10 @@ The main idea of this bot is to get basic COVID statistics pretty quickly, about
 > Will return author information (link to this repo)
 
 ## Configuring
-All settings can be changed by editing the `config.json` file. As of now, only 4 settings can be changed:
+All settings can be changed by editing the `config.json` file. As of now, only 3 settings can be changed:
 - `prefix` - This must be present before a command, in order to be recognized by the bot.
 - `token` - Discord bot token
-- `defaultLang` - Default language for the bot. Options available: `en`, `es`
-- `langs` - Array with languages installed. Files can be located on `./locales`
+- `defaultLang` - Default language for the bot. Options available: `en`, `es`. Chosen language has to exist in the `./locales` directory.
 
 ## Details
 This project was created using NodeJS (with the Discord.js library). COVID information is gathered from [Apify](https://apify.com/covid-19) using axios. Translation was integrated with i18n-node.

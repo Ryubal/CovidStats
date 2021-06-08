@@ -63,6 +63,16 @@
 			"help": "Ayuda",
 			"specific_help_msg": "Para ver ayuda acerca de un comando en específico, envíe `{prefix}ayuda COMANDO`, ejemplo: `{prefix}ayuda covid`",
 			"error_missing_command": "El comando `{command}` no existe"
+		},
+
+    "lang": {
+			"name": "idioma",
+			"description": "Para obtener lista de idiomas disponibles, o para cambiar a un idioma distinto",
+			"usage": "idioma [IDIOMA]",
+			"help_msg": "Si se llama sin parámetros (`{prefix}idioma`), retornará una lista de idiomas disponibles para elegir.\nSi se llama con un un idioma como parámetro, se cambiará a ese idioma. Ejemplo: `{prefix}idioma es`",
+			"available_langs": "Idiomas disponibles: `{installed_langs}`\n\nSi quisiera cambiar a otro idioma, envíe `{prefix}idioma [IDIOMA]`, donde `[IDIOMA]` es uno de los idiomas disponibles.\n\nEjemplo: `{prefix}idioma en`",
+			"error_invalid_lang": "`{lang}` no es un idioma válido.\n\nPara obtener una lista de idiomas disponibles, envíe `{prefix}idioma`",
+			"language_switched": "Perfecto! Hablaré en Español desde ahora 🙂"
 		}
 	}
 }

@@ -54,7 +54,7 @@
 			"help_msg": "-",
 			"ping_msg": "Pong!"
 		},
-		
+
 		"help": {
 			"name": "help",
 			"description": "Returns all commands available",
@@ -63,6 +63,16 @@
 			"help": "Help",
 			"specific_help_msg": "To see help about a specific command, send `{prefix}help COMMAND`, example: `{prefix}help covid`",
 			"error_missing_command": "The `{command}` command doesn't exist"
+		},
+
+		"lang": {
+			"name": "lang",
+			"description": "Returns available languages, or helps switch to a different language",
+			"usage": "lang [LANG]",
+			"help_msg": "If called with no params (`{prefix}lang`), will return a list of available languages to choose from.\nIf called with a language as parameter, will switch to that language. Example: `{prefix}lang es`",
+			"available_langs": "Available languages: `{installed_langs}`\n\nIf you'd like to switch languages, send `{prefix}lang [LANG]`, where `[LANG]` is one of the available languages.\n\nExample: `{prefix}lang es`",
+			"error_invalid_lang": "`{lang}` is not a valid language.\n\nTo get a list of valid languages, send `{prefix}lang`",
+			"language_switched": "Ok! I will speak in English now 🙂"
 		}
 	}
 }

@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const {token, langs, defaultLang} = require('./config.json')
+const {token, defaultLang} = require('./config.json')
 const fs = require('fs')
 const path = require('path')
 const i18n = require('i18n')
@@ -10,7 +10,6 @@ client.commands = new Discord.Collection()
 
 // Configure i18n
 i18n.configure({
-	locales: langs,
 	directory: path.join(__dirname, 'locales'),
 	defaultLocale: defaultLang,
 	objectNotation: true

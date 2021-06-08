@@ -31,6 +31,13 @@ The main idea of this bot is to get basic COVID statistics pretty quickly, about
 
 > If **command** is provided, will return information about that specific command
 
+`!lang [LANG]`
+> If no **lang** provided, will return a list of available languages
+
+> If **lang** is provided, will switch language. Example: `!lang es`
+
+> NOTE: When switching languages, commands will also change to that specific language. If you speak spanish, you can find more information in the `README-ES.md` file.
+
 `!version`
 > Will return current bot version
 

@@ -33,5 +33,5 @@ La idea principal de este bot es obtener información básica de estadísticas d
 `!ping`
 > Va a pingear al bot
 
-`!author`
+`!autor`
 > Regresará información acerca del autor (link a este repo)
